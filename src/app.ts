@@ -1,17 +1,13 @@
-import express from "express";
-import appRoutes from "api/routes/appRoutes.ts";
+import express, { Application } from "express";
+import addRoutes from "api/routes/appRoutes.ts";
 
-function main() {
-	const app = express();
-	const port = 5000;
+const app: Application = express();
+const port: number = 5000;
 
-	appRoutes(app);
+addRoutes(app);
 
-	app.listen(port, () => {
-		console.log("App is listening on port " + port);
-	});
+app.listen(port, () => {
+	console.log("App is listening on port " + port);
+});
 
-	app.use(express.json);
-}
-
-main();
+app.use(express.json);
