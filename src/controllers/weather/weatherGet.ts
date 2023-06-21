@@ -1,10 +1,10 @@
-const wOne = ((req, res) => {
+export const wOne = ((req, res) => {
     console.log("in wOne");
     res.json("in wOne");
 })
 
-const wTwo = ((req, res) => {
+export const wTwo = ((req, res) => {
     console.log("in wTwo");
     res.json("in wTwo");
 })
-module.exports = { wOne, wTwo }
+// module.exports = { wOne, wTwo }
