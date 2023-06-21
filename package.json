@@ -1,38 +1,42 @@
 {
-  "scripts": {
-	"dev": "node src/app.ts",
-    "build": "run-p type-check build-only",
-    "clean": "echo --- prettier ongoing --- & prettier --write src/ & echo --- type-check ongoing --- & vue-tsc --noEmit -p tsconfig.vitest.json --composite false & echo --- eslint ongoing --- & eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore & echo --- done ---",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
-  },
-  "dependencies": {
-    "axios": "^1.4.0",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "prettier": "2.8.8",
-    "typescript": "^5.1.3",
-    "@rushstack/eslint-patch": "^1.2.0",
-    "@tsconfig/node18": "^2.0.1",
-    "@types/jsdom": "^21.1.1",
-    "@types/node": "^18.16.8",
-    "eslint": "^8.39.0",
-    "npm-run-all": "^4.1.5"
-  },
-  "name": "proto-node",
-  "description": "",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThibaultNG/proto-node.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ThibaultNG/proto-node/issues"
-  },
-  "homepage": "https://github.com/ThibaultNG/proto-node#readme"
+	"scripts": {
+		"dev": "ts-node-dev --trace-warnings --transpile-only -r tsconfig-paths/register ./src/app.ts",
+		"build": "run-p type-check build-only",
+		"clean": "echo --- prettier ongoing --- & prettier --write src/ & echo --- type-check ongoing --- & vue-tsc --noEmit -p tsconfig.vitest.json --composite false & echo --- eslint ongoing --- & eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore & echo --- done ---",
+		"type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+		"format": "prettier --write src/"
+	},
+	"dependencies": {
+		"axios": "^1.4.0",
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"@rushstack/eslint-patch": "^1.2.0",
+		"@tsconfig/node18": "^2.0.1",
+		"@types/express": "^4.17.17",
+		"@types/jsdom": "^21.1.1",
+		"@types/node": "^18.16.8",
+		"eslint": "^8.39.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "2.8.8",
+		"ts-node": "^10.9.1",
+		"ts-node-dev": "^2.0.0",
+		"tsconfig-paths": "^4.2.0",
+		"typescript": "^5.1.3"
+	},
+	"name": "proto-node",
+	"description": "",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ThibaultNG/proto-node.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ThibaultNG/proto-node/issues"
+	},
+	"homepage": "https://github.com/ThibaultNG/proto-node#readme"
 }
