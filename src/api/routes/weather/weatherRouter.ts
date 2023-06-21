@@ -1,8 +1,9 @@
-const express = require("express");
-const router = express.Router();
-
+import { Router } from "express";
 import { wOne, wTwo } from "@/controllers/weather/weatherGet";
-router.get(
+
+const weatherRouter = Router();
+
+weatherRouter.get(
 	"/wOne",
 	(req: any, res: any, next: any) => {
 		console.log("in middleware of /wOne");
@@ -11,6 +12,6 @@ router.get(
 	},
 	wOne
 );
-router.get("/wTwo", wTwo);
+weatherRouter.get("/wTwo", wTwo);
 
-module.exports = router;
+export default weatherRouter;

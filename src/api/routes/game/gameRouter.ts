@@ -1,8 +1,9 @@
-import express, { Router } from "express";
-const router = Router();
-
+import { Router } from "express";
 import { wOne, wTwo } from "@/controllers/weather/weatherGet";
-router.get(
+
+const gameRouter = Router();
+
+gameRouter.get(
 	"/wOne",
 	(req: any, res: any, next: any) => {
 		console.log("in middleware of /wOne");
@@ -11,6 +12,6 @@ router.get(
 	},
 	wOne
 );
-router.get("/wTwo", wTwo);
+gameRouter.get("/wTwo", wTwo);
 
-module.exports = router;
+export default gameRouter;
