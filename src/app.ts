@@ -1,11 +1,18 @@
-const express = require('express')
-const app = express()
-const port = 3000
+function main(){
+  const express = require('express')
+  const app = express()
+  const port = 5000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  const appRoutes = require('./routes/appRoutes')
+  appRoutes.addRoutes(app)
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  app.listen(port, () => {
+      console.log("listening on port = " + port)
+  })
+
+  app.use(express.json)    
+}
+
+main();
+
+
