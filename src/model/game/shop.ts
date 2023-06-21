@@ -1,5 +1,5 @@
 import type ShopDTO from "./api/shopDTO";
-import { CHEAPSHARK_URL } from "../service/gameService";
+import { CHEAPSHARK_URL } from "../../service/gameService";
 
 export default class Shop {
 	id: string;
