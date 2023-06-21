@@ -2,7 +2,7 @@
 	"scripts": {
 		"dev": "ts-node-dev --trace-warnings --transpile-only -r tsconfig-paths/register ./src/app.ts",
 		"build": "run-p type-check build-only",
-		"clean": "echo --- prettier ongoing --- & prettier --write src/ & echo --- type-check ongoing --- & vue-tsc --noEmit -p tsconfig.vitest.json --composite false & echo --- eslint ongoing --- & eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore & echo --- done ---",
+		"clean": "echo --- prettier ongoing --- & prettier --write src/ & echo --- type-check ongoing --- & tsc --noEmit --composite false & echo --- eslint ongoing --- & eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore & echo --- done ---",
 		"type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
 		"format": "prettier --write src/"
@@ -19,7 +19,7 @@
 		"@types/jsdom": "^21.1.1",
 		"@types/node": "^18.16.8",
 		"@typescript-eslint/eslint-plugin": "^5.60.0",
-		"eslint": "^8.39.0",
+		"eslint": "^8.43.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "2.8.8",
 		"ts-node": "^10.9.1",
