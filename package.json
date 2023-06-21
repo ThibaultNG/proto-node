@@ -1,5 +1,6 @@
 {
   "scripts": {
+	"dev": "node src/app.ts",
     "build": "run-p type-check build-only",
     "clean": "echo --- prettier ongoing --- & prettier --write src/ & echo --- type-check ongoing --- & vue-tsc --noEmit -p tsconfig.vitest.json --composite false & echo --- eslint ongoing --- & eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore & echo --- done ---",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
