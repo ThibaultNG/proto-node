@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import * as weatherController from "@/controllers/weather/weatherGet";
+import * as weatherController from "@/controllers/weather/weatherController.ts";
 
 const weatherRouter = Router();
 
