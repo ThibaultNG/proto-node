@@ -3,9 +3,7 @@ import Game from "@/model/game/game";
 import Shop from "@/model/game/shop";
 import { Request, Response } from "express";
 
-export function getShops(req: Request, res: Response) {
-	console.log("get shops");
-
+export function getShops(req: Request, res: Response): void {
 	gameController
 		.getShops()
 		.then((shops: Shop[]) => {
@@ -13,11 +11,10 @@ export function getShops(req: Request, res: Response) {
 		})
 		.catch((error) => {
 			res.status(500).send(error);
-		})
-		.finally(() => console.log("Shops sent"));
+		});
 }
 
-export function getGamesByTitle(req: Request, res: Response) {
+export function getGamesByTitle(req: Request, res: Response): void {
 	if (req.query.title) {
 		gameController
 			.getGamesByTitle(req.query.title as string)
@@ -30,7 +27,7 @@ export function getGamesByTitle(req: Request, res: Response) {
 	}
 }
 
-export function getDeals(req: Request, res: Response) {
+export function getDeals(req: Request, res: Response): void {
 	if (req.params.gameId) {
 		if (isNaN(req.params.gameId as any)) {
 			res.status(400).send("Error 400 : gameId is NaN");

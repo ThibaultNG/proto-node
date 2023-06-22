@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as gameMiddleware from "@/middlewares/gameMiddleware";
 
-const gameRouter = Router();
+const gameRouter: Router = Router();
 
 gameRouter.get("/shops", gameMiddleware.getShops);
 
