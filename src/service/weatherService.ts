@@ -2,7 +2,7 @@ import WeatherServiceDTO from "@/model/weather/service/dto/weatherServiceDTO";
 import Weather from "@/model/weather/weather";
 import axios from "axios";
 
-export function getInfoWeatherService(data: Weather, latitude: any, longitude: any): Promise<any> {
+export function getWeatherInfo(data: Weather, latitude: any, longitude: any): Promise<any> {
 	return axios
 		.get(
 			"https://api.open-meteo.com/v1/forecast" +
