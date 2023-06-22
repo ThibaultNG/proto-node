@@ -16,9 +16,9 @@ weatherRouter.get(
 weatherRouter.get("/wTwo", wTwo);
 
 //TODO : refactor and clean code and seperation of concerns
-weatherRouter.get("/getWeatherInfo", (req: any, res: any, next: any) => {
+weatherRouter.get("/getWeatherInfo", (req: any, res: any) => {
 	console.log("in api getWeatherInfo");
-	getWeatherInfo(req, res, next);
+	getWeatherInfo(req, res);
 	console.log(req.query);
 });
 

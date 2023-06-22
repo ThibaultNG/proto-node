@@ -1,5 +1,5 @@
-import WeatherDTO from "@/model/weather/dto/weatherDTO";
 import { getInfoWeatherService } from "../../service/weatherService";
+import Weather from "@/model/weather/weather";
 
 export const wOne = (req: any, res: any) => {
 	console.log("in wOne");
@@ -15,13 +15,13 @@ export const wTwo = (req: any, res: any) => {
 };
 // module.exports = { wOne, wTwo }
 
-export const getWeatherInfo = (req: any, res: any, next: any) => {
+export const getWeatherInfo = async (req: any, res: any) => {
 	console.log("in controller getWeatherInfo");
-	getInfoWeatherService(0, 0).then((response: any) => {
-		console.log("in service then getInfoWeatherService");
-		const responseDataDTO: WeatherDTO = response.data as WeatherDTO;
 
-		// res.status(200).json(req.query)
-		res.status(200).json(responseDataDTO);
-	});
+	let data = new Weather();
+	await getInfoWeatherService(data, 0, 0);
+
+	let dataApiDTO = Weather.fromModelToApiDTO(data);
+	// res.status(200).json(req.query)
+	res.status(200).json(dataApiDTO);
 };
