@@ -1,12 +1,12 @@
 import { Router } from "express";
-import * as gameController from "@/controllers/games/gameController";
+import * as gameMiddleware from "@/middlewares/gameMiddleware";
 
-const gameRouter = Router();
+const gameRouter: Router = Router();
 
-gameRouter.get("/shops", gameController.getShops);
+gameRouter.get("/shops", gameMiddleware.getShops);
 
-gameRouter.get("/games", gameController.getGames);
+gameRouter.get("/games", gameMiddleware.getGamesByTitle);
 
-gameRouter.get("/deals/:gameId", gameController.getDeals);
+gameRouter.get("/deals/:gameId", gameMiddleware.getDeals);
 
 export default gameRouter;
