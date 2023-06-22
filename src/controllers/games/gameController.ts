@@ -9,6 +9,6 @@ export function getShops(req: Request, res: Response) {
 		})
 		.catch((error) => {
 			res.status(500).send(error);
-		}).finally(()=>console.log("finally")
-		);
+		})
+		.finally(() => console.log("finally"));
 }

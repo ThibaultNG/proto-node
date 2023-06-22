@@ -1,11 +1,11 @@
-export default interface WeatherDTO {
+export default interface WeatherServiceDTO {
 	latitude: number;
 	longitude: number;
 	generationtime_ms: number;
-	current_weather: CurrentWeatherDTO;
+	current_weather: CurrentWeatherServiceDTO;
 }
 
-export interface CurrentWeatherDTO {
+export interface CurrentWeatherServiceDTO {
 	temperature: number;
 	windspeed: number;
 	winddirection: number;
