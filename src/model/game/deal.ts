@@ -1,4 +1,4 @@
-import type DealDTO from "./api/dealDTO";
+import type DealDTO from "./dto/dealDTO";
 
 export default class Deal {
 	id: string;

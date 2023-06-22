@@ -1,6 +1,6 @@
 import { Application } from "express";
-import gameRouter from "./game/gameRouter";
-import weatherRouter from "./weather/weatherRouter";
+import gameRouter from "./gameRouter";
+import weatherRouter from "./weatherRouter";
 
 export default function addRoutes(app: Application) {
 	app.use("/game", gameRouter);

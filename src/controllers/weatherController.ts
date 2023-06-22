@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import * as weatherService from "../../service/weatherService";
+import * as weatherService from "../service/weatherService";
 import Weather from "@/model/weather/weather";
 
 export const getWeatherInfo = (req: Request, res: Response): Response => {

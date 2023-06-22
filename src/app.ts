@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import addRoutes from "api/routes/appRoutes.ts";
+import addRoutes from "@/api/routes/addRoutes";
 
 const app: Application = express();
 const hostname: string = "127.0.0.1";

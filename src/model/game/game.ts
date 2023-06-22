@@ -1,6 +1,6 @@
 import Deal from "./deal";
-import type GameDTO from "./api/gameDTO";
-import type GameLookupDTO from "./api/gameLookupDTO";
+import type GameDTO from "./dto/gameDTO";
+import type GameLookupDTO from "./dto/gameLookupDTO";
 
 export default class Game {
 	id!: number;

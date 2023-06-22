@@ -1,4 +1,4 @@
-import * as gameController from "@/controllers/games/gameController";
+import * as gameController from "@/controllers/gameController";
 import Game from "@/model/game/game";
 import Shop from "@/model/game/shop";
 import { Request, Response } from "express";

@@ -1,4 +1,4 @@
-import type ShopDTO from "./api/shopDTO";
+import type ShopDTO from "./dto/shopDTO";
 import { CHEAPSHARK_URL } from "../../service/gameService";
 
 export default class Shop {
