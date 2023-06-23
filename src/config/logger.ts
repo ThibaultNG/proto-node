@@ -11,8 +11,8 @@ const logger = createLogger({
 	level: "silly", // level : silly < debug < verbose < info < warn < error
 	format: customFormat,
 	transports: [
-		new transports.Console({ level: "debug" }),
-		new transports.File({ filename: "./src/logs/app.log", level: "info" })
+		new transports.Console({ level: "info" }),
+		new transports.File({ filename: "./src/logs/app.log", level: "debug" })
 	]
 });
 
