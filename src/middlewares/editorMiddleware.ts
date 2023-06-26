@@ -2,11 +2,15 @@ import { Request, Response } from "express";
 import fs from "fs";
 
 export function getFile(req: Request, res: Response): void {
-	try {
-		const data = fs.readFileSync(process.env.DEMBOOST + "/config/device.yaml", "utf8");
-		res.send(data);
-	} catch (err) {
-		console.error(err);
+	if (req.query.fileName) {
+		try {
+			const file = fs.readFileSync(process.env.DEMBOOST + "/config/"+req.query.fileName, "utf8");
+			res.status(200).send(file);
+		} catch (err) {
+			res.status(500).send("Error : could not fetch file with name " + req.query.fileName);
+		}
+	} else {
+		res.status(400).send("Missing fileName param");
 	}
 }
 
@@ -20,5 +24,13 @@ export function saveFile(req: Request, res: Response): void {
 		}
 	} else {
 		res.status(400).send("Missing data");
+	}
+}
+export function getFileList(req: Request, res: Response) {
+	try {
+		const files = fs.readdirSync(process.env.DEMBOOST + "/config");
+		res.status(200).json(files);
+	} catch (error) {
+		res.status(500).send("Saved files could not be found");
 	}
 }
