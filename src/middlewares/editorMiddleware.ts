@@ -4,7 +4,10 @@ import fs from "fs";
 export function getFile(req: Request, res: Response): void {
 	if (req.query.fileName) {
 		try {
-			const file = fs.readFileSync(process.env.DEMBOOST + "/config/"+req.query.fileName, "utf8");
+			const file = fs.readFileSync(
+				process.env.DEMBOOST + "/config/" + req.query.fileName,
+				"utf8"
+			);
 			res.status(200).send(file);
 		} catch (err) {
 			res.status(500).send("Error : could not fetch file with name " + req.query.fileName);
