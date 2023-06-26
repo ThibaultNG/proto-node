@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import addRoutes from "@/api/routes/addRoutes";
 import cors from "cors";
+import logger from "./config/logger";
 
 const app: Application = express();
 const hostname: string = "127.0.0.1";
@@ -10,7 +11,7 @@ app.use(cors());
 addRoutes(app);
 
 app.listen(port, hostname, () => {
-	console.log("Running on = http://" + hostname + ":" + port);
+	logger.info("Running on = http://" + hostname + ":" + port);
 });
 
 app.use(express.json);

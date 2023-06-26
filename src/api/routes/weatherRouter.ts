@@ -1,14 +1,8 @@
-import { Router, Request, Response } from "express";
-import * as weatherController from "@/controllers/weatherController";
+import { Router } from "express";
+import * as weatherMiddleware from "@/middlewares/weatherMiddleware";
 
 const weatherRouter = Router();
 
-weatherRouter.get("/getWeatherInfo", (req: Request, res: Response) => {
-	console.log("in api getWeatherInfo");
-
-	res = weatherController.getWeatherInfo(req, res);
-
-	// console.log(req.query);
-});
+weatherRouter.get("/getWeatherInfo", weatherMiddleware.getWeatherInfo);
 
 export default weatherRouter;
