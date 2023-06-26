@@ -18,15 +18,20 @@ export function getFile(req: Request, res: Response): void {
 }
 
 export function saveFile(req: Request, res: Response): void {
-	if (req.body.data) {
+	if (req.body.fileName && req.body.content) {
+		console.log(req.body);
+
 		try {
-			fs.writeFileSync(process.env.DEMBOOST + "/config/config_temp.yaml", req.body.data);
+			fs.writeFileSync(
+				process.env.DEMBOOST + "/config/" + req.body.fileName,
+				req.body.content
+			);
 			res.status(200).send("File successfully saved");
 		} catch (err) {
 			res.status(500).send("Could not save file");
 		}
 	} else {
-		res.status(400).send("Missing data");
+		res.status(400).send("Missing fileName and/or content");
 	}
 }
 export function getFileList(req: Request, res: Response) {
