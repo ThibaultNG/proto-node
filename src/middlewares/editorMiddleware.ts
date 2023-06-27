@@ -19,8 +19,6 @@ export function getFile(req: Request, res: Response): void {
 
 export function saveFile(req: Request, res: Response): void {
 	if (req.body.fileName && req.body.content) {
-		console.log(req.body);
-
 		try {
 			fs.writeFileSync(
 				process.env.DEMBOOST + "/config/" + req.body.fileName,
